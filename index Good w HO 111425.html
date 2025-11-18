@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALO Project Management Services | Align • Lead • Optimize</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0d3b66;--brand-2:#1f7a8c;--accent:#f4d35e;--sky:#cfe9ff;
+      --pine:#1b4332;--sand:#f6f1e9;--ink:#0f172a;--muted:#5b6b7a;
+      --card:#ffffff;--maxw:1160px;--radius:16px;--shadow:0 10px 30px rgba(13,59,102,.12)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+         color:var(--ink);background:linear-gradient(180deg,#e8f4ff 0%,#eef8ff 18%,#f8fbff 100%);line-height:1.55}
+    a{color:var(--brand-2);text-decoration:none}a:hover{text-decoration:underline}
+    .container{width:100%;max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+    .section{padding:64px 0}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--pine);font-size:.85rem}
+    h1,h2,h3{line-height:1.2;margin:0 0 16px}h1{font-family:"Playfair Display",serif;font-size:clamp(28px,6vw,48px);color:var(--brand)}
+    h2{font-size:clamp(22px,4.5vw,34px);color:var(--brand)}h3{font-size:clamp(18px,3.2vw,24px);color:var(--pine)}
+    p{margin:0 0 14px;color:#1f2937}ul{margin:12px 0 0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid #e8eef7}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:12px}.logo img{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#fff}
+    .brand{display:grid}.brand strong{font-weight:800;color:var(--brand);line-height:1}.brand span{font-size:12px;color:var(--muted)}
+    .nav a.btn{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--brand);color:#fff;border:1px solid transparent;box-shadow:var(--shadow)}
+    .nav a.btn:hover{background:#0b345a;text-decoration:none}.menu{display:flex;gap:18px;align-items:center}.menu a{color:var(--ink);font-weight:600}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(13,59,102,.08),rgba(31,122,140,.06)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat}
+    .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:radial-gradient(120% 100% at 50% 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  pointer-events:none;}
+    .hero-inner{padding:96px 0 72px;display:grid;gap:16px}.tagline{font-weight:700;color:var(--pine)}.sub{font-size:clamp(16px,2.6vw,20px);max-width:900px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}.btn-primary{background:var(--brand);color:#fff;padding:14px 18px;border-radius:12px;border:1px solid transparent;box-shadow:var(--shadow);font-weight:700}
+    .btn-primary:hover{background:#0b345a;text-decoration:none}.btn-ghost{background:#ffffff;color:var(--brand);padding:14px 18px;border-radius:12px;border:1px solid #d6e3f3;font-weight:700}
+    .grid{display:grid;gap:20px}@media (min-width:880px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:1fr 1fr 1fr}.grid.cols-4{grid-template-columns:repeat(4,1fr)}}
+    .card{background:var(--card);border:1px solid #e8eef7;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.card h3{margin-bottom:6px}
+    .alt{background:linear-gradient(180deg,#f4f9ff,#ffffff);border-top:1px solid #e8eef7;border-bottom:1px solid #e8eef7}.note{font-size:.95rem;color:var(--muted)}
+    footer{background:#0c2f52;color:#e6f0fb;padding:32px 0;margin-top:36px}footer a{color:#ffffff;text-decoration:underline}.divider{height:1px;background:#e6edf7;margin:28px 0}.list-tight li{margin:8px 0}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+    .preview-gate{position:fixed;inset:0;background:linear-gradient(180deg,#0d3b66 0%,#1f7a8c 100%);display:flex;align-items:center;justify-content:center;z-index:9999;color:#fff;padding:24px}
+    .preview-card{width:min(520px,92vw);background:#ffffff;color:#0f172a;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.2);padding:24px}
+    .preview-card h2{margin:0 0 4px;font-size:24px;color:#0d3b66}.preview-card p{margin:0 0 14px;color:#475569}
+    .preview-row{display:flex;gap:12px;margin-top:8px}.preview-input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #d6e3f3;font-size:16px}
+    .preview-btn{padding:12px 16px;border-radius:12px;border:1px solid transparent;background:#0d3b66;color:#fff;font-weight:700;cursor:pointer}.preview-btn:hover{background:#0b345a}
+    .preview-error{color:#b91c1c;font-size:.95rem;margin-top:8px;display:none}
+    .preview-reset{position:fixed;bottom:16px;right:16px;z-index:9999;display:none;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #d6e3f3;background:#ffffff;color:#0d3b66;box-shadow:0 10px 24px rgba(13,59,102,.15);font-weight:700;cursor:pointer}
+  </style>
+
+</head>
+<body>
+  <div class="preview-gate" id="previewGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="preview-card">
+      <h2 id="gateTitle">Private Preview</h2>
+      <p>Enter the preview password to view this draft site.</p>
+      <div class="preview-row">
+        <input id="previewPass" class="preview-input" type="password" placeholder="Password" autocomplete="current-password" />
+        <button class="preview-btn" id="previewBtn">Enter</button>
+      </div>
+      <div id="previewErr" class="preview-error">Incorrect password. Try again.</div>
+    </div>
+  </div>
+  <button id="previewReset" class="preview-reset" type="button" title="Reset preview lock">Reset Preview</button>
+  <script>
+    (function(){
+      var PASSWORD = "ALO2025";
+      var KEY = "alo_preview_ok";
+      var gate = document.getElementById('previewGate');
+      var passInput = document.getElementById('previewPass');
+      var btn = document.getElementById('previewBtn');
+      var err = document.getElementById('previewErr');
+      var resetBtn = document.getElementById('previewReset');
+      if (location.search.indexOf('reset=1') !== -1) {
+        try { localStorage.removeItem(KEY); } catch(e){}
+      }
+      function openSite(){ if (gate && gate.parentNode) gate.parentNode.removeChild(gate); if (resetBtn) resetBtn.style.display = 'inline-flex'; }
+      function showError(){ if (err) err.style.display = 'block'; }
+      function tryUnlock(){ var val = (passInput && passInput.value || '').trim(); if (val === PASSWORD){ try { localStorage.setItem(KEY,'1'); } catch(e){} openSite(); } else { showError(); } }
+      if (window.localStorage && localStorage.getItem(KEY) === '1') { openSite(); } else { if (btn) btn.addEventListener('click', tryUnlock); if (passInput) passInput.addEventListener('keydown', function(e){ if(e.key==='Enter') tryUnlock(); }); }
+      if (resetBtn){ resetBtn.addEventListener('click', function(){ try { localStorage.removeItem(KEY); } catch(e){} location.reload(); }); }
+    })();
+  </script>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">
+        <img src="https://dummyimage.com/120x120/0d3b66/ffffff.png&text=ALO" alt="ALO logo placeholder" />
+        <span class="brand">
+          <strong>ALO Project Management Services</strong>
+          <span>Align • Lead • Optimize</span>
+        </span>
+      </a>
+      <nav class="menu" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#industries">Industries</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top" role="banner" aria-label="Lakeside banner">
+    <div class="container hero-inner">
+      <span class="eyebrow">ALO Project Management Services</span>
+      <h1>Aligning, Leading, Optimizing</h1>
+      <p class="sub"><strong>Got a project?</strong> We’ll find your PM or contact for any service.</p>
+      <p class="sub">“Connecting businesses with professional Project Managers — temporary or long-term — to lead projects of any size across industries. Our mission is simple: <em>Align. Lead. Optimize.</em>”</p>
+      <p class="sub">“Connecting local homeowners with skilled professionals for nearly any project — small fixes, painting, outdoor maintenance, and of course, assembling that 'simple' bookshelf that arrived in a flat box with 500+ pieces and one tiny Allen wrench. For larger jobs like roofing or remodels, we can connect you with reliable companies as well.”</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="#services">Explore Services</a>
+        <a class="btn-ghost" href="mailto:olsonkj@msn.com?subject=ALO%20Project%20Request&body=Tell%20us%20about%20your%20project%3A%0A-%20Company%3A%0A-%20Project%20type%3A%0A-%20Timeline%3A%0A-%20Goals%3A%0A-%20Budget%20target%20(optional)%3A%0A%0AWe'll%20reply%20with%20a%20match.">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p><strong>Professional Project Management — Aligning, Leading, Optimizing.</strong><br/>At ALO Project Management Services, we connect businesses with Project Managers who provide expert leadership, technical insight, and measurable results. Our professionals deliver across multiple industries — managing everything from complex technology deployments to construction and operational transitions. You tell us what you need, we will find the Project Manager to make it happen.</p>
+      <p>We’re <em>not</em> a staffing agency — we’re a connection point for project excellence. We research, vet, and refer experienced Project Managers who can immediately integrate into your team and deliver success from day one.</p>
+
+      <div class="grid cols-3" style="margin-top:22px;">
+        <article class="card">
+          <h3>Construction & Facilities PM</h3>
+          <p>From concept to completion — on time and on budget. Oversight for remodels, new builds, decommissions, and infrastructure upgrades. Value: reduces risk and downtime, ensures compliant delivery.</p>
+        </article>
+        <article class="card">
+          <h3>Technology & Operations</h3>
+          <p>Lead system rollouts, migrations, upgrades, and RTO initiatives. Balance technical detail with executive reporting for smooth delivery and measurable savings.</p>
+        </article>
+        <article class="card">
+          <h3>Vendor & Contractor Management</h3>
+          <p>Manage multi-vendor relationships, procurement, SLAs, schedules, billing, and change requests. Value: curbs overruns and boosts partner performance.</p>
+        </article>
+        <article class="card">
+          <h3>Operational & Process Projects</h3>
+          <p>Cross-functional improvements that streamline workflows and elevate service delivery. From documentation to new business systems, align people, tech, and outcomes.</p>
+        </article>
+        <article class="card">
+          <h3>Moves, Adds & Changes (MAC)</h3>
+          <p>Coordinate relocations, restacks, cabling, and installs with minimal downtime. Value: keeps operations running smoothly through transitions.</p>
+        </article>
+        <article class="card">
+          <h3>Consulting & PM Placement</h3>
+          <p>Research, vet, and connect you with qualified contract PMs who match your industry, culture, and goals. Value: immediate impact without full-time headcount.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section alt" id="how">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="note">“You tell us the project — we find the Project Manager to lead it.” A simple, three-step process to connect you with the right PM.</p>
+      <div class="grid cols-3" style="margin-top: 10px;">
+        <article class="card">
+          <h3>1️⃣ Submit Your Project Request</h3>
+          <p>Tell us project type, timeline, and goals. We’ll review your scope, priorities, and ideal experience level.</p>
+        </article>
+        <article class="card">
+          <h3>2️⃣ We Research and Match</h3>
+          <p>We source qualified professionals from our trusted network and identify the best fit by industry, skills, and culture.</p>
+        </article>
+        <article class="card">
+          <h3>3️⃣ You Connect and Hire</h3>
+          <p>Receive a vetted PM’s résumé and contact details to engage directly for contract or project-based work. Fast and transparent.</p>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top: 14px;">
+        <a class="btn-primary" href="mailto:olsonkj@msn.com?subject=Project%20Request%20-%20ALO&body=Please%20share%20your%20project%20details%20and%20timeline.">Submit a Request</a>
+        <a class="btn-ghost" href="#contact">Questions? Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" id="industries">
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <div class="grid cols-4" style="margin-top:14px;">
+        <ul class="card list-tight">
+          <li>Construction & Facilities Management</li>
+          <li>Information Technology / Infrastructure</li>
+          <li>Manufacturing & Engineering</li>
+          <li>Government & Public Works</li>
+        </ul>
+        <ul class="card list-tight">
+          <li>Financial Services & Banking</li>
+          <li>Healthcare & Medical Systems</li>
+          <li>Education & Public Institutions</li>
+          <li>Transportation & Logistics</li>
+        </ul>
+        <ul class="card list-tight">
+          <li>Utilities & Energy</li>
+          <li>Retail & Corporate Services</li>
+          <li>Telecommunications & Networking</li>
+          <li>Security & Law Enforcement Support</li>
+        </ul>
+        <ul class="card list-tight">
+          <li>Nonprofit & Community Organizations</li>
+          <li>Environmental & Sustainability Initiatives</li>
+          <li>Real Estate Development & Property Management</li>
+          <li>Agriculture & Operations Support</li>
+        </ul>
+      </div>
+      <p class="note" style="margin-top:12px;">If there’s a project — we produce a PM to help manage it.</p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section alt" id="process">
+    <div class="container">
+      <h2>Our Process</h2>
+      <div class="grid cols-4" style="margin-top:14px;">
+        <article class="card"><h3>1. Discover</h3><p>We review your needs to understand goals, scope, and resources.</p></article>
+        <article class="card"><h3>2. Identify</h3><p>We research and match the right Project Manager for your work.</p></article>
+        <article class="card"><h3>3. Connect</h3><p>We facilitate introductions and a seamless onboarding process.</p></article>
+        <article class="card"><h3>4. Support</h3><p>We stay engaged to ensure satisfaction and success end-to-end.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision / Mission / Branding -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid cols-2">
+        <div>
+          <h2>Vision Statement</h2>
+          <p><strong>Connecting businesses with professional project management professionals.</strong> Our vision is simple: to bridge the gap between organizations in need of experienced leadership and the qualified Project Managers who can deliver measurable results.</p>
+          <div class="divider"></div>
+          <h2>Mission Statement</h2>
+          <p>At ALO Project Management Services, our mission is to align goals, lead with integrity, and optimize every outcome. We connect businesses with trusted project management professionals who bring clarity, structure, and success to every engagement — from short-term contract roles to large-scale operational, construction, and technology initiatives.</p>
+        </div>
+        <div>
+          <h2>Branding Statement / Who We Are</h2>
+          <p>Building projects, supporting communities, and creating with purpose. ALO Project Management Services is part of ALO Services, a Minnesota-based, family-founded company built on quality, reliability, and results.</p>
+          <p>Built on over 30 years of business and leadership experience — supported by certified PMP® and PMI-ACP® expertise — we help businesses find the right project leadership to move work forward efficiently, effectively, and on budget.</p>
+          <p>We’re not a staffing agency — we’re a connection point for project excellence. We research, vet, and refer experienced Project Managers who can immediately integrate into your team and deliver success from day one.</p>
+          <p><strong>Align. Lead. Optimize.</strong></p>
+          <ul>
+            <li>Align project goals with business objectives.</li>
+            <li>Lead with proven expertise and accountability.</li>
+            <li>Optimize every step for efficiency and measurable results.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do / Why Partner -->
+  <section class="section alt" id="value">
+    <div class="container">
+      <div class="grid cols-2">
+        <div>
+          <h2>What We Do</h2>
+          <p><strong>Professional Project Management, On Demand.</strong> Whether you need short-term support, specialized leadership, or full-cycle delivery, we connect you with skilled professionals ready to deliver results.</p>
+          <ul>
+            <li><strong>Construction & Facilities Projects</strong> – Remodels, relocations, buildouts, decommissions.</li>
+            <li><strong>Technology & Operations</strong> – System upgrades, process improvements, RTO initiatives.</li>
+            <li><strong>Vendor & Contract Management</strong> – Budget tracking, scheduling, coordination.</li>
+            <li><strong>Enterprise & Local Projects</strong> – MAC work to enterprise transformations.</li>
+          </ul>
+          <p>Each professional is selected for planning, scheduling, budgeting, vendor coordination, and stakeholder communication — ensuring every project runs smoothly.</p>
+        </div>
+        <div>
+          <h2>Why Partner with ALO</h2>
+          <ul>
+            <li>✅ Experienced professionals, vetted for skill and reliability</li>
+            <li>✅ Flexible, contract-based project leadership options</li>
+            <li>✅ Cost-effective alternative to full-time staffing</li>
+            <li>✅ Local Minnesota-based company with nationwide connections</li>
+            <li>✅ Personalized placement support led by a certified PMP® professional</li>
+          </ul>
+          <div class="divider"></div>
+          <h3>Looking Ahead</h3>
+          <p>ALO Project Management Services is the foundation of a growing family of divisions under ALO Services — including:</p>
+          <ul class="list-tight">
+            <li><strong>ALO Home Services</strong> – Reliable local help for projects, yard care, and maintenance (now starting)</li>
+            <li><strong>TMO Crafting</strong> – Handcrafted gifts and creative home décor by Tina Olson (coming soon)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal approach / Differentiators -->
+  <section class="section" id="choose">
+    <div class="container">
+      <h2>Why Choose ALO Project Management Services</h2>
+      <p><strong>Personalized Project Leadership — Not Just Another Job Posting Platform.</strong> We take the guesswork out of hiring with targeted research and vetting — delivering verified talent ready to lead from day one.</p>
+      <ul>
+        <li>🔹 <strong>Personal Vetting</strong>: Every PM is reviewed for skills, certification, and reliability.</li>
+        <li>🔹 <strong>Time Savings</strong>: Skip endless applications — receive top-tier candidates fast.</li>
+        <li>🔹 <strong>Flexible Engagements</strong>: Temporary or long-term — your choice.</li>
+        <li>🔹 <strong>Transparent Pricing</strong>: No hidden costs or daily ad fees.</li>
+        <li>🔹 <strong>Experience You Can Trust</strong>: 30+ years of project leadership behind every match.</li>
+      </ul>
+      <div class="card" style="margin-top: 18px;">
+        <h3>💲 Our Fee Structure</h3>
+        <p>Please contact us for our current options.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="section alt" id="join">
+    <div class="container">
+      <h2>Join Our PM Network</h2>
+      <p>Click below if you’d like to become part of ALO Project Management Services’ team of PMs and submit your résumé.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="mailto:olsonkj@msn.com?subject=PM%20Resume%20Submission%20-%20ALO&body=Please%20attach%20your%20resume%20and%20share%20your%20primary%20industry%2Fskills%2C%20certifications%20(e.g.%20PMP%C2%AE%2C%20PMI-ACP%C2%AE)%2C%20and%20availability.">Submit Résumé</a>
+        <a class="btn-ghost" href="#contact">Have questions?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Let’s Build Success Together</h2>
+      <p>When your business needs dependable project leadership, ALO Project Management Services delivers.</p>
+      <div class="grid cols-3" style="margin-top: 12px;">
+        <div class="card">
+          <h3>Contact</h3>
+          <p><strong>Email:</strong> <a href="mailto:olsonkj@msn.com">olsonkj@msn.com</a><br/>
+             <strong>Phone:</strong> <a href="tel:+16127415572">612-741-5572</a></p>
+        </div>
+        <div class="card">
+          <h3>Location</h3>
+          <p>Based in Andover, Minnesota — serving local & regional clients.</p>
+        </div>
+        <div class="card">
+          <h3>Quick Start</h3>
+          <p>Send us your scope, timeline, and goals. We’ll research and match the right PM.</p>
+          <p><a class="btn-primary" href="mailto:olsonkj@msn.com?subject=Start%20a%20Project%20-%20ALO">Start Now</a></p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:12px;">Prefer a form instead of email? We can add a simple request form that sends directly to your inbox.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <div>
+          <strong>ALO Project Management Services</strong> — Align • Lead • Optimize
+          <div style="font-size:.95rem; color:#cfe0f7;">© <span id="year"></span> ALO Services. All rights reserved.</div>
+        </div>
+        <div>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
