@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ALO Project Management Services, LLC | Align • Lead • Optimize</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
     .nav a.btn:hover{background:#0b345a;text-decoration:none}.menu{display:flex;gap:18px;align-items:center}.menu a{color:var(--ink);font-weight:600}
     .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(13,59,102,.08),rgba(31,122,140,.06)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat}
     .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:radial-gradient(120% 100% at 50% 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
-  pointer-events:none;}
+      pointer-events:none;}
     .hero-inner{padding:96px 0 72px;display:grid;gap:16px}.tagline{font-weight:700;color:var(--pine)}.sub{font-size:clamp(16px,2.6vw,20px);max-width:900px}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}.btn-primary{background:var(--brand);color:#fff;padding:14px 18px;border-radius:12px;border:1px solid transparent;box-shadow:var(--shadow);font-weight:700}
     .btn-primary:hover{background:#0b345a;text-decoration:none}.btn-ghost{background:#ffffff;color:var(--brand);padding:14px 18px;border-radius:12px;border:1px solid #d6e3f3;font-weight:700}
@@ -66,8 +66,14 @@
     </div>
   </div>
   <button id="previewReset" class="preview-reset" type="button" title="Reset preview lock">Reset Preview</button>
+
   <script>
     (function(){
+      // Toggle this flag to turn password protection on/off:
+      // false = password disabled (site is public)
+      // true  = password enabled (prompt required)
+      var PASSWORD_ENABLED = false;
+
       var PASSWORD = "ALO2025";
       var KEY = "alo_preview_ok";
       var gate = document.getElementById('previewGate');
@@ -75,14 +81,51 @@
       var btn = document.getElementById('previewBtn');
       var err = document.getElementById('previewErr');
       var resetBtn = document.getElementById('previewReset');
+
       if (location.search.indexOf('reset=1') !== -1) {
         try { localStorage.removeItem(KEY); } catch(e){}
       }
-      function openSite(){ if (gate && gate.parentNode) gate.parentNode.removeChild(gate); if (resetBtn) resetBtn.style.display = 'inline-flex'; }
-      function showError(){ if (err) err.style.display = 'block'; }
-      function tryUnlock(){ var val = (passInput && passInput.value || '').trim(); if (val === PASSWORD){ try { localStorage.setItem(KEY,'1'); } catch(e){} openSite(); } else { showError(); } }
-      if (window.localStorage && localStorage.getItem(KEY) === '1') { openSite(); } else { if (btn) btn.addEventListener('click', tryUnlock); if (passInput) passInput.addEventListener('keydown', function(e){ if(e.key==='Enter') tryUnlock(); }); }
-      if (resetBtn){ resetBtn.addEventListener('click', function(){ try { localStorage.removeItem(KEY); } catch(e){} location.reload(); }); }
+
+      function openSite(){
+        if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+        if (resetBtn) resetBtn.style.display = 'inline-flex';
+      }
+
+      function showError(){
+        if (err) err.style.display = 'block';
+      }
+
+      function tryUnlock(){
+        var val = (passInput && passInput.value || '').trim();
+        if (val === PASSWORD){
+          try { localStorage.setItem(KEY,'1'); } catch(e){}
+          openSite();
+        } else {
+          showError();
+        }
+      }
+
+      // If password is disabled, immediately open the site and skip all checks
+      if (!PASSWORD_ENABLED){
+        openSite();
+        return;
+      }
+
+      if (window.localStorage && localStorage.getItem(KEY) === '1') {
+        openSite();
+      } else {
+        if (btn) btn.addEventListener('click', tryUnlock);
+        if (passInput) passInput.addEventListener('keydown', function(e){
+          if(e.key==='Enter') tryUnlock();
+        });
+      }
+
+      if (resetBtn){
+        resetBtn.addEventListener('click', function(){
+          try { localStorage.removeItem(KEY); } catch(e){}
+          location.reload();
+        });
+      }
     })();
   </script>
 
@@ -111,6 +154,7 @@
     <div class="container hero-inner">
       <span class="eyebrow">ALO Project Management Services, LLC</span>
       <h1>Aligning, Leading, Optimizing</h1>
+      <p class="sub"><em>Built on over 30 years of business and leadership experience — supported by certified PMP® and PMI-ACP® expertise.</em></p>
       <p class="sub"><strong>Got a project?</strong> We’ll find your PM or contact for any service.</p>
       <p class="sub">“Connecting businesses with professional Project Managers — temporary or long-term — to lead projects of any size across industries. Our mission is simple: <em>Align. Lead. Optimize.</em>”</p>
       <p class="sub">“Connecting local homeowners with skilled professionals for nearly any project — small fixes, painting, outdoor maintenance, and of course, assembling that 'simple' bookshelf that arrived in a flat box with 500+ pieces and one tiny Allen wrench. For larger jobs like roofing or remodels, we can connect you with reliable companies as well.”</p>
