@@ -103,6 +103,7 @@
     .divider{height:1px;background:#e6edf7;margin:28px 0}
     .list-tight li{margin:8px 0}
     :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+    .hidden-fees { display: none; }
   </style>
 </head>
 
@@ -122,6 +123,7 @@
         <a href="#how">How It Works</a>
         <a href="#industries">Industries</a>
         <a href="#process">Process</a>
+        <a href="#fees" data-fees-link>Fees &amp; Quotes</a>
         <a href="#contact" class="btn">Contact</a>
       </nav>
     </div>
@@ -359,14 +361,14 @@
   </section>
 
   <!-- Service Fees & Quote Options -->
-  <section class="section alt" id="fees">
+  <section class="section alt hidden-fees" id="fees">
     <div class="container">
       <h2>Service Fees &amp; Quote Options</h2>
       <div class="grid cols-2" style="margin-top:18px;">
         <div class="card" id="pm-fees">
           <h3>Project Manager Referral Fees</h3>
           <p><strong>Business / Project Managers – Referral or Finder’s Fee (Light involvement)</strong></p>
-          <p>If we research, vet, and refer a Project Manager — and your business handles the contract, payments, and HR directly — we typically recommend:</p>
+          <p>We research, vet, and refer a Project Manager — and your business handles the contract, payments, and HR directly — we typically recommend:</p>
           <ul>
             <li><strong>Standard range:</strong> 10%–20% of the total contract value or first year’s pay (for longer-term placements).</li>
           </ul>
@@ -445,6 +447,29 @@
     </div>
   </footer>
 
+  <script>
+  (function () {
+    var feesSection = document.getElementById('fees');
+    if (!feesSection) return;
+
+    var feeLinks = document.querySelectorAll('[data-fees-link]');
+
+    function showFees(e) {
+      if (e) e.preventDefault();
+      feesSection.classList.remove('hidden-fees');
+      feesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    feeLinks.forEach(function (link) {
+      link.addEventListener('click', showFees);
+    });
+
+    // If someone visits with #fees in the URL, show it automatically
+    if (location.hash === '#fees') {
+      feesSection.classList.remove('hidden-fees');
+    }
+  })();
+</script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
